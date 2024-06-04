@@ -1,4 +1,5 @@
 using System.Reflection;
+using MediatR;
 using Microsoft.OpenApi.Models;
 
 public class Startup
@@ -14,6 +15,8 @@ public class Startup
     {
         services.AddEndpointsApiExplorer();
         services.AddControllers();
+
+        services.AddMediatR(Assembly.GetExecutingAssembly());
 
         services.AddSwaggerGen(options =>
         {
